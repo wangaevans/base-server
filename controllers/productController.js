@@ -31,7 +31,7 @@ export const getProductById = async (req, res) => {
             res.status(404).json({ error: "Product not found" });
             return;
         }
-        const { __v, createdAt, ...productData } = product._doc;
+        const { __v, createdAt,updatedAt, ...productData } = product._doc;
         res.status(200).json(productData);
     } catch (error) {
         res.status(500).json({ error: "Failed to retrieve product" });
